@@ -15,16 +15,18 @@
     header {
       background: #000;
       color: #fff;
-      padding: 55px 20px;
+      padding: 40px 20px;
       text-align: center;
     }
     header img {
-      max-height: 80px;
-      margin-bottom: 15px;
+      max-height: 100px;
+      width: auto;
+      display: block;
+      margin: 0 auto 15px auto;
     }
-    header h1 { font-size: 38px; margin-bottom: 10px; }
+    header h1 { font-size: 38px; margin-bottom: 5px; }
     header p { font-size: 18px; opacity: 0.9; }
-    section { max-width: 1000px; margin: auto; padding: 40px 20px; }
+    section { max-width: 1100px; margin: auto; padding: 40px 20px; }
     .features div {
       background: #fff;
       padding: 20px;
@@ -69,10 +71,10 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
 
-    /* Desktop gallery grid */
+    /* Gallery */
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 20px;
     }
     .product {
@@ -86,6 +88,8 @@
     .product img {
       width: 100%;
       border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
     }
     .product h3 { margin: 10px 0 5px; font-size: 18px; }
     .product p { font-size: 16px; color: #0a5cff; font-weight: bold; }
@@ -99,8 +103,6 @@
       text-decoration: none;
       font-weight: bold;
     }
-
-    /* Hover animation */
     .product:hover {
       transform: scale(1.05);
       box-shadow: 0 8px 20px rgba(0,0,0,0.2);
@@ -111,8 +113,6 @@
         box-shadow: 0 6px 18px rgba(0,0,0,0.18);
       }
     }
-
-    /* Mobile swipeable gallery */
     @media (max-width: 768px) {
       .gallery {
         display: flex;
@@ -122,11 +122,24 @@
         gap: 15px;
         padding-bottom: 10px;
       }
-      .product {
-        min-width: 250px;
-        flex: 0 0 auto;
-        scroll-snap-align: start;
-      }
+      .product { min-width: 250px; flex: 0 0 auto; scroll-snap-align: start; }
+    }
+
+    /* Lightbox */
+    #lightbox {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.85);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    #lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 8px;
     }
   </style>
 </head>
@@ -159,126 +172,144 @@
 <section>
   <h2>Our Collection</h2>
   <div class="gallery">
-    <!-- 20 Products (Images, Names, Prices, WhatsApp links) -->
+    <!-- 20 Product Cards -->
     <div class="product">
       <img src="https://i.imgur.com/oqSOkvG.jpeg" alt="3Kings Royal Heritage Shoe – Legacy Edition">
       <h3>3Kings Royal Heritage Shoe – Legacy Edition</h3>
       <p>$150</p>
-      <a href="https://wa.me/8613631461664?text=I%20want%20to%20order%203Kings%20Royal%20Heritage%20Shoe" target="_blank">Order</a>
+      <a href="https://wa.me/8613631461664?text=I want to order 3Kings Royal Heritage Shoe" target="_blank">Order</a>
+    </div>
+    <div class="product">
+      <img src="https://i.imgur.com/btrDI0g.jpeg" alt="3Kings Royal Heritage Shoe – Legacy Edition">
+      <h3>3Kings Royal Heritage Shoe – Legacy Edition</h3>
+      <p>$150</p>
+      <a href="https://wa.me/8613631461664?text=I want to order 3Kings Royal Heritage Shoe" target="_blank">Order</a>
     </div>
     <div class="product">
       <img src="https://i.imgur.com/kX5WWVh.jpeg" alt="3Kings Executive Supreme – All-Day Comfort Edition">
       <h3>3Kings Executive Supreme – All-Day Comfort Edition</h3>
       <p>$140</p>
-      <a href="https://wa.me/8613631461664?text=I%20want%20to%20order%203Kings%20Executive%20Supreme" target="_blank">Order</a>
-    </div>
-    <div class="product">
-      <img src="https://i.imgur.com/AtZCx0m.jpeg" alt="3Kings Ultra-Durable Canvas – Mastercraft Edition">
-      <h3>3Kings Ultra-Durable Canvas – Mastercraft Edition</h3>
-      <p>$95</p>
-      <a href="https://wa.me/8613631461664?text=I%20want%20to%20order%203Kings%20Ultra-Durable%20Canvas" target="_blank">Order</a>
+      <a href="https://wa.me/8613631461664?text=I want to order 3Kings Executive Supreme" target="_blank">Order</a>
     </div>
     <div class="product">
       <img src="https://i.imgur.com/qBJ5B4y.jpeg" alt="3Kings Elite Pathfinder – Outdoor Travel Edition">
       <h3>3Kings Elite Pathfinder – Outdoor Travel Edition</h3>
       <p>$130</p>
-      <a href="https://wa.me/8613631461664?text=I%20want%20to%20order%203Kings%20Elite%20Pathfinder" target="_blank">Order</a>
+      <a href="https://wa.me/8613631461664?text=I want to order 3Kings Elite Pathfinder" target="_blank">Order</a>
     </div>
     <div class="product">
       <img src="https://i.imgur.com/6qu6iAL.jpeg" alt="3Kings Classic Monarch – Premium Office Edition">
       <h3>3Kings Classic Monarch – Premium Office Edition</h3>
       <p>$145</p>
-      <a href="https://wa.me/8613631461664?text=I%20want%20to%20order%203Kings%20Classic%20Monarch" target="_blank">Order</a>
+      <a href="https://wa.me/8613631461664?text=I want to order 3Kings Classic Monarch" target="_blank">Order</a>
     </div>
     <div class="product">
       <img src="https://i.imgur.com/QGru2pM.jpeg" alt="3Kings Urban Runner – Street Style Edition">
       <h3>3Kings Urban Runner – Street Style Edition</h3>
       <p>$110</p>
-      <a href="https://wa.me/8613631461664?text=I%20want%20to%20order%203Kings%20Urban%20Runner" target="_blank">Order</a>
+      <a href="https://wa.me/8613631461664?text=I want to order 3Kings Urban Runner" target="_blank">Order</a>
     </div>
     <div class="product">
       <img src="https://i.imgur.com/d6GeQLo.jpeg" alt="3Kings Luxe Derby – Evening Formal Edition">
       <h3>3Kings Luxe Derby – Evening Formal Edition</h3>
       <p>$155</p>
-      <a href="https://wa.me/8613631461664?text=I%20want%20to%20order%203Kings%20Luxe%20Derby" target="_blank">Order</a>
+      <a href="https://wa.me/8613631461664?text=I want to order 3Kings Luxe Derby" target="_blank">Order</a>
     </div>
     <div class="product">
       <img src="https://i.imgur.com/aqhNFVA.jpeg" alt="3Kings Summer Breeze Sandal – Comfort Edition">
       <h3>3Kings Summer Breeze Sandal – Comfort Edition</h3>
       <p>$75</p>
-      <a href="https://wa.me/8613631461664?text=I%20want%20to%20order%203Kings%20Summer%20Breeze%20Sandal" target="_blank">Order</a>
+      <a href="https://wa.me/8613631461664?text=I want to order 3Kings Summer Breeze Sandal" target="_blank">Order</a>
     </div>
     <div class="product">
       <img src="https://i.imgur.com/4E9dHJL.jpeg" alt="3Kings All-Terrain Boot – Rugged Edition">
       <h3>3Kings All-Terrain Boot – Rugged Edition</h3>
       <p>$160</p>
-      <a href="https://wa.me/8613631461664?text=I%20want%20to%20order%203Kings%20All-Terrain%20Boot" target="_blank">Order</a>
+      <a href="https://wa.me/8613631461664?text=I want to order 3Kings All-Terrain Boot" target="_blank">Order</a>
     </div>
     <div class="product">
       <img src="https://i.imgur.com/TbE4dOM.jpeg" alt="3Kings Minimalist Slip-On – Everyday Edition">
       <h3>3Kings Minimalist Slip-On – Everyday Edition</h3>
       <p>$90</p>
-      <a href="https://wa.me/8613631461664?text=I%20want%20to%20order%203Kings%20Minimalist%20Slip-On" target="_blank">Order</a>
+      <a href="https://wa.me/8613631461664?text=I want to order 3Kings Minimalist Slip-On" target="_blank">Order</a>
     </div>
     <div class="product">
       <img src="https://i.imgur.com/oI5te73.jpeg" alt="3Kings Classic Loafer – Heritage Edition">
       <h3>3Kings Classic Loafer – Heritage Edition</h3>
       <p>$135</p>
-      <a href="https://wa.me/8613631461664?text=I%20want%20to%20order%203Kings%20Classic%20Loafer" target="_blank">Order</a>
+      <a href="https://wa.me/8613631461664?text=I want to order 3Kings Classic Loafer" target="_blank">Order</a>
     </div>
     <div class="product">
       <img src="https://i.imgur.com/kGJD7Ib.jpeg" alt="3Kings Nightfall Oxford – Executive Edition">
       <h3>3Kings Nightfall Oxford – Executive Edition</h3>
       <p>$150</p>
-      <a href="https://wa.me/8613631461664?text=I%20want%20to%20order%203Kings%20Nightfall%20Oxford" target="_blank">Order</a>
+      <a href="https://wa.me/8613631461664?text=I want to order 3Kings Nightfall Oxford" target="_blank">Order</a>
     </div>
     <div class="product">
       <img src="https://i.imgur.com/Q8bDtTp.jpeg" alt="3Kings Coastal Loafer – Summer Edition">
       <h3>3Kings Coastal Loafer – Summer Edition</h3>
       <p>$95</p>
-      <a href="https://wa.me/8613631461664?text=I%20want%20to%20order%203Kings%20Coastal%20Loafer" target="_blank">Order</a>
+      <a href="https://wa.me/8613631461664?text=I want to order 3Kings Coastal Loafer" target="_blank">Order</a>
+    </div>
+    <div class="product">
+      <img src="https://i.imgur.com/RgpUeHS.jpeg" alt="3Kings Coastal Loafer – Summer Edition">
+      <h3>3Kings Coastal Loafer – Summer Edition</h3>
+      <p>$95</p>
+      <a href="https://wa.me/8613631461664?text=I want to order 3Kings Coastal Loafer" target="_blank">Order</a>
     </div>
     <div class="product">
       <img src="https://i.imgur.com/ApD9C17.jpeg" alt="3Kings Mountain Trek – Hiking Boot Edition">
       <h3>3Kings Mountain Trek – Hiking Boot Edition</h3>
       <p>$165</p>
-      <a href="https://wa.me/8613631461664?text=I%20want%20to%20order%203Kings%20Mountain%20Trek" target="_blank">Order</a>
+      <a href="https://wa.me/8613631461664?text=I want to order 3Kings Mountain Trek" target="_blank">Order</a>
     </div>
     <div class="product">
       <img src="https://i.imgur.com/IPRmPuA.jpeg" alt="3Kings Regal Loafer – Premium Comfort Edition">
       <h3>3Kings Regal Loafer – Premium Comfort Edition</h3>
       <p>$140</p>
-      <a href="https://wa.me/8613631461664?text=I%20want%20to%20order%203Kings%20Regal%20Loafer" target="_blank">Order</a>
+      <a href="https://wa.me/8613631461664?text=I want to order 3Kings Regal Loafer" target="_blank">Order</a>
+    </div>
+    <div class="product">
+      <img src="https://i.imgur.com/n48gmZS.jpeg" alt="3Kings Regal Loafer – Premium Comfort Edition">
+      <h3>3Kings Regal Loafer – Premium Comfort Edition</h3>
+      <p>$140</p>
+      <a href="https://wa.me/8613631461664?text=I want to order 3Kings Regal Loafer" target="_blank">Order</a>
     </div>
     <div class="product">
       <img src="https://i.imgur.com/JOoz1dI.jpeg" alt="3Kings Street Runner – Modern Sneaker Edition">
       <h3>3Kings Street Runner – Modern Sneaker Edition</h3>
       <p>$120</p>
-      <a href="https://wa.me/8613631461664?text=I%20want%20to%20order%203Kings%20Street%20Runner" target="_blank">Order</a>
+      <a href="https://wa.me/8613631461664?text=I want to order 3Kings Street Runner" target="_blank">Order</a>
     </div>
     <div class="product">
       <img src="https://i.imgur.com/cYtHpQ9.jpeg" alt="3Kings Heritage Monkstrap – Formal Edition">
       <h3>3Kings Heritage Monkstrap – Formal Edition</h3>
       <p>$150</p>
-      <a href="https://wa.me/8613631461664?text=I%20want%20to%20order%203Kings%20Heritage%20Monkstrap" target="_blank">Order</a>
+      <a href="https://wa.me/8613631461664?text=I want to order 3Kings Heritage Monkstrap" target="_blank">Order</a>
     </div>
     <div class="product">
       <img src="https://i.imgur.com/EWIC78J.jpeg" alt="3Kings Voyager Sneaker – Travel Edition">
       <h3>3Kings Voyager Sneaker – Travel Edition</h3>
       <p>$115</p>
-      <a href="https://wa.me/8613631461664?text=I%20want%20to%20order%203Kings%20Voyager%20Sneaker" target="_blank">Order</a>
+      <a href="https://wa.me/8613631461664?text=I want to order 3Kings Voyager Sneaker" target="_blank">Order</a>
+    </div>
+    <div class="product">
+      <img src="https://i.imgur.com/iRxY6Jt.jpeg" alt="3Kings Voyager Sneaker – Travel Edition">
+      <h3>3Kings Voyager Sneaker – Travel Edition</h3>
+      <p>$115</p>
+      <a href="https://wa.me/8613631461664?text=I want to order 3Kings Voyager Sneaker" target="_blank">Order</a>
     </div>
     <div class="product">
       <img src="https://i.imgur.com/OQtlivL.jpeg" alt="3Kings Royale Sandal – Summer Premium Edition">
       <h3>3Kings Royale Sandal – Summer Premium Edition</h3>
       <p>$80</p>
-      <a href="https://wa.me/8613631461664?text=I%20want%20to%20order%203Kings%20Royale%20Sandal" target="_blank">Order</a>
+      <a href="https://wa.me/8613631461664?text=I want to order 3Kings Royale Sandal" target="_blank">Order</a>
     </div>
     <div class="product">
       <img src="https://i.imgur.com/oFyWzya.jpeg" alt="3Kings Monarch Derby – Executive Office Edition">
       <h3>3Kings Monarch Derby – Executive Office Edition</h3>
       <p>$155</p>
-      <a href="https://wa.me/8613631461664?text=I%20want%20to%20order%203Kings%20Monarch%20Derby" target="_blank">Order</a>
+      <a href="https://wa.me/8613631461664?text=I want to order 3Kings Monarch Derby" target="_blank">Order</a>
     </div>
   </div>
 </section>
@@ -293,6 +324,27 @@
   WhatsApp Order
 </a>
 
+<!-- Lightbox -->
+<div id="lightbox">
+  <img id="lightbox-img" src="">
+</div>
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+
+  document.querySelectorAll('.product img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightbox.style.display = 'flex';
+      lightboxImg.src = img.src;
+    });
+  });
+
+  lightbox.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+  });
+</script>
+
 <footer>
   📩 Email: chico7329@yahoo.com  
   <br/>
@@ -303,3 +355,4 @@
 
 </body>
 </html>
+``
