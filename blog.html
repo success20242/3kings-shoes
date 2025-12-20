@@ -95,13 +95,18 @@ function renderPosts() {
         <p class="post-date">Published on ${dateStr}</p>
         <p>${post.desc}</p>
         <div class="share-buttons">
-          <strong>Share this post:</strong>
-          <a href="https://www.facebook.com/sharer/sharer.php?u=${urlEnc}" target="_blank">Facebook</a> |
-          <a href="https://wa.me/?text=Check%20this%20out:%20${urlEnc}" target="_blank">WhatsApp</a> |
-          <a href="https://t.me/share/url?url=${urlEnc}" target="_blank">Telegram</a> |
-          <a href="https://pinterest.com/pin/create/button/?url=${urlEnc}&media=${imgEnc}" target="_blank">Pinterest</a>
-        </div>
-      </div>
+  <strong>Share this post:</strong>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=${urlEnc}" target="_blank">Facebook</a> |
+  <a href="https://wa.me/?text=Check%20this%20out:%20${urlEnc}" target="_blank">WhatsApp</a> |
+  <a href="https://t.me/share/url?url=${urlEnc}" target="_blank">Telegram</a> |
+  <a href="https://pinterest.com/pin/create/button/?url=${urlEnc}&media=${imgEnc}" target="_blank">Pinterest</a> |
+  <a href="https://www.blogger.com/blog-this.g?u=${urlEnc}&n=${encodeURIComponent(post.title)}"
+     target="_blank"
+     style="color:#f57c00;font-weight:bold;">
+     Post to Blogger
+  </a>
+</div>
+
     `;
 
     postsContainer.appendChild(article);
