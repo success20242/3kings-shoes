@@ -4,8 +4,36 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>3KINGS SHOES Blog | Style, Comfort & Shoe Care Tips</title>
-<meta name="description" content="Expert shoe fashion tips, footwear care guides, and style inspiration from 3KINGS SHOES.">
+<meta name="description" content="Explore expert shoe fashion tips, footwear care guides, and style inspiration from 3KINGS SHOES.">
 <link rel="stylesheet" href="css/style.css">
+<style>
+  #pagination {
+    margin-top: 20px;
+    text-align: center;
+  }
+  #pagination button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  #pagination button:disabled {
+    background-color: #999;
+    cursor: not-allowed;
+  }
+  .share-buttons a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: #0077cc;
+  }
+  .post-date {
+    font-size: 0.85em;
+    color: #555;
+  }
+</style>
 </head>
 <body>
 
@@ -20,104 +48,101 @@
   </nav>
 </header>
 
-<section>
-  <h2>Latest Shoe & Fashion Insights</h2>
-
-  <!-- Blog post 1 -->
-  <article class="blog-post">
-    <a href="blog-shoe-occasion.html">
-      <h3>How to Choose the Perfect Formal Shoe</h3>
-      <img src="https://i.imgur.com/kX5WWVh.jpeg" alt="Formal Shoes Guide">
-      <p>Choosing the right formal shoe is about comfort, quality, and fit. Leather shoes with strong soles are ideal for office and business occasions.</p>
-    </a>
-  </article>
-
-   <!-- Blog post 2 -->
-  <article class="blog-post">
-    <a href="blog-quality-investment.html">
-      <h3>Why Shoe Quality Matters More Than Price</h3>
-      <p>Investing in quality shoes saves money long-term and ensures foot health with durable materials and stitching.</p>
-    </a>
-  </article>
-
-  <!-- Blog post 3 -->
-  <article class="blog-post">
-    <a href="blog-timeless-trends.html">
-      <h3>Summer Sandals: Comfort Meets Style</h3>
-      <img src="https://i.imgur.com/aqhNFVA.jpeg" alt="Summer Sandals">
-      <p>Breathable and lightweight sandals with cushioned soles prevent foot fatigue and pair easily with casual outfits.</p>
-    </a>
-  </article>
-
-  <!-- Blog post 4 -->
-  <article class="blog-post">
-    <a href="blog-shoe-care.html">
-      <h3>How to Care for Your Shoes and Make Them Last</h3>
-      <p>Clean, dry, and store shoes properly. Use shoe trees to maintain shape and extend lifespan.</p>
-    </a>
-  </article>
-
-  <!-- Blog post 5 -->
-  <article class="blog-post">
-    <a href="blog-casual-shoes.html">
-      <h3>Top Casual Shoes for Everyday Comfort</h3>
-      <p>Discover stylish casual shoes that keep your feet comfortable while complementing your everyday outfits.</p>
-    </a>
-  </article>
-
-  <!-- Blog post 6 -->
-  <article class="blog-post">
-    <a href="blog-office-shoes.html">
-      <h3>Office Shoes: Style Meets Professionalism</h3>
-      <p>Learn which shoes give you a professional look while staying comfortable during long office hours.</p>
-    </a>
-  </article>
-
-  <!-- Blog post 7 -->
-  <article class="blog-post">
-    <a href="blog-shoe-trends.html">
-      <h3>Shoe Trends to Watch This Year</h3>
-      <p>Stay ahead of sneaker fashion with the latest trends in colors, designs, and must-have models.</p>
-    </a>
-  </article>
-
-  <!-- Blog post 8 -->
-  <article class="blog-post">
-    <a href="blog-shoe-occasion.html">
-      <h3>How to Choose the Perfect Shoe for Every Occasion</h3>
-      <p>Learn the differences between leather, synthetic, and fabric shoes to pick the perfect pair for every occasion.</p>
-    </a>
-  </article>
-
-  <!-- Blog post 9 -->
-  <article class="blog-post">
-    <a href="blog-fitness-sneakers.html">
-      <h3>Choosing the Right Sneakers for Fitness</h3>
-      <p>Tips on measuring your feet, selecting the right size, and avoiding discomfort or blisters.</p>
-    </a>
-  </article>
-
-  <!-- Blog post 10 -->
-  <article class="blog-post">
-    <a href="blog-timeless-trends.html">
-      <h3>Pairing Shoes with Your Outfit: A Quick Guide</h3>
-      <p>Learn how to match shoes with clothing, from casual to formal, to elevate your style effortlessly.</p>
-    </a>
-  </article>
-
+<section id="blog-posts">
+  <!-- Blog posts will be injected here dynamically -->
 </section>
 
+<div id="pagination">
+  <button id="prev">Previous</button>
+  <button id="next">Next</button>
+</div>
+
 <footer>
-  📩 Email: chico7329@yahoo.com  
-  <br/>
-  🌍 Retail • Wholesale • Worldwide Shipping  
-  <br/><br/>
+  📩 Email: chico7329@yahoo.com <br>
+  🌍 Retail • Wholesale • Worldwide Shipping <br><br>
   <a href="privacy.html">Privacy Policy</a> |
   <a href="terms.html">Terms & Conditions</a> |
   <a href="contact.html">Contact</a>
-  <br/><br/>
+  <br><br>
   © 2025 3KINGS SHOES. All Rights Reserved.
 </footer>
+
+<script>
+  const posts = [
+    {title: "Top Casual Shoes for Everyday Comfort", url:"blog/casual-shoes.html", desc:"Discover casual shoes that balance comfort and style for everyday wear.", img:"https://i.imgur.com/kX5WWVh.jpeg"},
+    {title: "Choosing the Right Sneakers for Fitness", url:"blog/choosing-sneakers.html", desc:"Tips for selecting sneakers for running, gym workouts, and active lifestyles.", img:"https://i.imgur.com/aqhNFVA.jpeg"},
+    {title: "Footwear Maintenance Tips for Long-Lasting Shoes", url:"blog/footwear-maintenance.html", desc:"Learn how to clean, polish, and store shoes to maximize lifespan.", img:"https://i.imgur.com/oqSOkvG.jpeg"},
+    {title: "Office Shoes: Style Meets Professionalism", url:"blog/office-shoes.html", desc:"Professional office shoes that combine comfort, durability, and style.", img:"https://i.imgur.com/or0HMh6.jpeg"},
+    {title: "Best Shoes for Outdoor Adventures", url:"blog/outdoor-adventures.html", desc:"Durable and comfortable shoes for hiking, walking, and outdoor activities.", img:"https://i.imgur.com/oqSOkvG.jpeg"},
+    {title: "Why Quality Shoes Are a Smart Investment", url:"blog/quality-shoes-investment.html", desc:"Invest in long-lasting, comfortable, and supportive footwear.", img:"https://i.imgur.com/kX5WWVh.jpeg"},
+    {title: "How to Care for Your Shoes", url:"blog/shoe-care.html", desc:"Expert tips to maintain shape, comfort, and appearance of your shoes.", img:"https://i.imgur.com/aqhNFVA.jpeg"},
+    {title: "How to Choose the Perfect Shoe for Every Occasion", url:"blog/perfect-shoe-occasion.html", desc:"Footwear guidance for formal, casual, travel, and outdoor activities.", img:"https://i.imgur.com/oqSOkvG.jpeg"},
+    {title: "Shoe Trends to Watch This Year", url:"blog/shoe-trends-year.html", desc:"Stay fashionable with the latest trends in sneakers, sandals, and eco-friendly shoes.", img:"https://i.imgur.com/kX5WWVh.jpeg"},
+    {title: "Shoe Styles That Never Go Out of Fashion", url:"blog/shoe-styles-timeless.html", desc:"Classic loafers, sneakers, and sandals that remain stylish year after year.", img:"https://i.imgur.com/aqhNFVA.jpeg"}
+  ];
+
+  const postsPerPage = 5;
+  let currentPage = 1;
+  const totalPages = Math.ceil(posts.length / postsPerPage);
+
+  const postsContainer = document.getElementById('blog-posts');
+  const prevBtn = document.getElementById('prev');
+  const nextBtn = document.getElementById('next');
+
+  function renderPosts() {
+    postsContainer.innerHTML = '';
+    const start = (currentPage - 1) * postsPerPage;
+    const end = start + postsPerPage;
+    const pagePosts = posts.slice(start, end);
+
+    pagePosts.forEach(post => {
+      const article = document.createElement('article');
+      article.classList.add('blog-post');
+
+      // Generate today's date dynamically
+      const today = new Date();
+      const dateStr = today.toDateString();
+
+      // Encode URLs for sharing
+      const urlEnc = encodeURIComponent(post.url);
+      const imgEnc = encodeURIComponent(post.img);
+
+      article.innerHTML = `
+        <h3><a href="${post.url}">${post.title}</a></h3>
+        <p class="post-date">Published on ${dateStr}</p>
+        <p>${post.desc}</p>
+        <div class="share-buttons">
+          <strong>Share this post:</strong>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=${urlEnc}" target="_blank">Facebook</a> |
+          <a href="https://wa.me/?text=Check%20this%20out:%20${urlEnc}" target="_blank">WhatsApp</a> |
+          <a href="https://t.me/share/url?url=${urlEnc}" target="_blank">Telegram</a> |
+          <a href="https://pinterest.com/pin/create/button/?url=${urlEnc}&media=${imgEnc}" target="_blank">Pinterest</a>
+        </div>
+      `;
+      postsContainer.appendChild(article);
+    });
+
+    prevBtn.disabled = currentPage === 1;
+    nextBtn.disabled = currentPage === totalPages;
+  }
+
+  prevBtn.addEventListener('click', () => {
+    if (currentPage > 1) {
+      currentPage--;
+      renderPosts();
+    }
+  });
+
+  nextBtn.addEventListener('click', () => {
+    if (currentPage < totalPages) {
+      currentPage++;
+      renderPosts();
+    }
+  });
+
+  // Initial render
+  renderPosts();
+</script>
 
 </body>
 </html>
