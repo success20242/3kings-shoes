@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>How to Choose the Perfect Shoe for Every Occasion | 3KINGS SHOES</title>
+<meta name="description" content="Expert tips on selecting the perfect shoe for work, formal events, casual outings, and travel. Comfort, style, and durability from 3KINGS SHOES.">
+
+<!-- Open Graph (Facebook, WhatsApp) -->
+<meta property="og:title" content="How to Choose the Perfect Shoe for Every Occasion">
+<meta property="og:description" content="Tips on selecting the ideal footwear for work, casual outings, formal events, and travel.">
+<meta property="og:image" content="https://i.imgur.com/7Q0b8Zj.jpeg">
+<meta property="og:url" content="https://success20242.github.io/3kings-shoes/blog/how-to-choose-the-perfect-shoe.html">
+<meta property="og:type" content="article">
+
+<!-- Pinterest -->
+<meta name="pinterest-rich-pin" content="true">
+
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header>
+  <img src="https://i.imgur.com/or0HMh6.jpeg" alt="3KINGS SHOES Logo">
+  <h1>3KINGS SHOES Blog</h1>
+  <nav>
+    <a href="../index.html">Home</a> |
+    <a href="../blog.html">Blog</a> |
+    <a href="../about.html">About Us</a>
+  </nav>
+</header>
+
+<article class="blog-post">
+
+  <h2>How to Choose the Perfect Shoe for Every Occasion</h2>
+
+  <!-- AUTO DATE -->
+  <p class="post-date" data-date></p>
+
+  <img
+    src="https://i.imgur.com/7Q0b8Zj.jpeg"
+    alt="Various shoe types for occasions"
+    class="blog-featured-img"
+  >
+
+  <p>
+    Choosing the right shoe goes beyond fashion. Proper footwear ensures comfort, confidence,
+    and foot health for every activity you do.
+  </p>
+
+  <h3>Formal Occasions</h3>
+  <p>
+    For work, formal events, or business meetings, select leather shoes with structured soles
+    and clean finishes. They convey professionalism and authority.
+  </p>
+
+  <h3>Casual & Everyday Wear</h3>
+  <p>
+    Casual shoes should be flexible, breathable, and lightweight. Sneakers, loafers, and slip-ons
+    are ideal for daily activities, errands, and social outings.
+  </p>
+
+  <h3>Travel & Outdoor Activities</h3>
+  <p>
+    Shoes for travel and outdoor use should combine durability and traction. Solid outsoles,
+    cushioned interiors, and water-resistant materials reduce fatigue during long walks and adventures.
+  </p>
+
+  <p>
+    At <strong>3KINGS SHOES</strong>, every shoe is designed to balance style, comfort,
+    and durability—so you’re ready for any occasion.
+  </p>
+
+</article>
+
+<!-- SHARE BUTTONS -->
+<div id="share-container"></div>
+
+<footer>
+  📩 Email: chico7329@yahoo.com <br>
+  🌍 Retail • Wholesale • Worldwide Shipping <br><br>
+  <a href="../privacy.html">Privacy Policy</a> |
+  <a href="../terms.html">Terms & Conditions</a> |
+  <a href="../contact.html">Contact</a>
+  <br><br>
+  © 2025 3KINGS SHOES. All Rights Reserved.
+</footer>
+
+<!-- AUTO DATE + SHARE SCRIPT -->
+<script>
+  // Auto publication date
+  const dateEl = document.querySelector('[data-date]');
+  const today = new Date();
+  dateEl.textContent = "Published on " + today.toDateString();
+
+  // Dynamic share buttons
+  const url = encodeURIComponent(window.location.href);
+  const image = encodeURIComponent(document.querySelector('.blog-featured-img').src);
+
+  document.getElementById("share-container").innerHTML = `
+    <div class="share-buttons">
+      <strong>Share this post:</strong><br>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=${url}" target="_blank">Facebook</a> |
+      <a href="https://wa.me/?text=Check%20this%20out:%20${url}" target="_blank">WhatsApp</a> |
+      <a href="https://t.me/share/url?url=${url}" target="_blank">Telegram</a> |
+      <a href="https://pinterest.com/pin/create/button/?url=${url}&media=${image}" target="_blank">Pinterest</a>
+    </div>
+  `;
+</script>
+
+</body>
+</html>
