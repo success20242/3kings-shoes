@@ -5,34 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>3KINGS SHOES Blog | Style, Comfort & Shoe Care Tips</title>
 <meta name="description" content="Explore expert shoe fashion tips, footwear care guides, and style inspiration from 3KINGS SHOES.">
+
 <link rel="stylesheet" href="css/style.css">
 <style>
-  #pagination {
-    margin-top: 20px;
-    text-align: center;
-  }
-  #pagination button {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 8px 12px;
-    margin: 0 5px;
-    cursor: pointer;
-    border-radius: 4px;
-  }
-  #pagination button:disabled {
-    background-color: #999;
-    cursor: not-allowed;
-  }
-  .share-buttons a {
-    margin-right: 10px;
-    text-decoration: none;
-    color: #0077cc;
-  }
-  .post-date {
-    font-size: 0.85em;
-    color: #555;
-  }
+  #pagination { margin-top: 20px; text-align: center; }
+  #pagination button { background-color: #333; color: #fff; border: none; padding: 8px 12px; margin: 0 5px; cursor: pointer; border-radius: 4px; }
+  #pagination button:disabled { background-color: #999; cursor: not-allowed; }
+  .share-buttons a { margin-right: 10px; text-decoration: none; color: #0077cc; }
+  .post-date { font-size: 0.85em; color: #555; }
+  .blog-post { border-bottom: 1px solid #ddd; margin-bottom: 20px; padding-bottom: 15px; display: flex; gap: 15px; }
+  .blog-post img { width: 150px; height: 225px; object-fit: cover; border-radius: 5px; flex-shrink: 0; }
+  .blog-post div.content { flex-grow: 1; }
 </style>
 </head>
 <body>
@@ -48,9 +31,7 @@
   </nav>
 </header>
 
-<section id="blog-posts">
-  <!-- Blog posts will be injected here dynamically -->
-</section>
+<section id="blog-posts"></section>
 
 <div id="pagination">
   <button id="prev">Previous</button>
@@ -68,46 +49,48 @@
 </footer>
 
 <script>
-  const posts = [
-    {title: "Top Casual Shoes for Everyday Comfort", url:"blog/casual-shoes.html", desc:"Discover casual shoes that balance comfort and style for everyday wear.", img:"https://i.imgur.com/kX5WWVh.jpeg"},
-    {title: "Choosing the Right Sneakers for Fitness", url:"blog/choosing-sneakers.html", desc:"Tips for selecting sneakers for running, gym workouts, and active lifestyles.", img:"https://i.imgur.com/aqhNFVA.jpeg"},
-    {title: "Footwear Maintenance Tips for Long-Lasting Shoes", url:"blog/footwear-maintenance.html", desc:"Learn how to clean, polish, and store shoes to maximize lifespan.", img:"https://i.imgur.com/oqSOkvG.jpeg"},
-    {title: "Office Shoes: Style Meets Professionalism", url:"blog/office-shoes.html", desc:"Professional office shoes that combine comfort, durability, and style.", img:"https://i.imgur.com/or0HMh6.jpeg"},
-    {title: "Best Shoes for Outdoor Adventures", url:"blog/outdoor-adventures.html", desc:"Durable and comfortable shoes for hiking, walking, and outdoor activities.", img:"https://i.imgur.com/oqSOkvG.jpeg"},
-    {title: "Why Quality Shoes Are a Smart Investment", url:"blog/quality-shoes-investment.html", desc:"Invest in long-lasting, comfortable, and supportive footwear.", img:"https://i.imgur.com/kX5WWVh.jpeg"},
-    {title: "How to Care for Your Shoes", url:"blog/shoe-care.html", desc:"Expert tips to maintain shape, comfort, and appearance of your shoes.", img:"https://i.imgur.com/aqhNFVA.jpeg"},
-    {title: "How to Choose the Perfect Shoe for Every Occasion", url:"blog/perfect-shoe-occasion.html", desc:"Footwear guidance for formal, casual, travel, and outdoor activities.", img:"https://i.imgur.com/oqSOkvG.jpeg"},
-    {title: "Shoe Trends to Watch This Year", url:"blog/shoe-trends-year.html", desc:"Stay fashionable with the latest trends in sneakers, sandals, and eco-friendly shoes.", img:"https://i.imgur.com/kX5WWVh.jpeg"},
-    {title: "Shoe Styles That Never Go Out of Fashion", url:"blog/shoe-styles-timeless.html", desc:"Classic loafers, sneakers, and sandals that remain stylish year after year.", img:"https://i.imgur.com/aqhNFVA.jpeg"}
-  ];
+const posts = [
+  {title: "Top Casual Shoes for Everyday Comfort", url:"blog/casual-shoes.html", desc:"Discover casual shoes that balance comfort and style for everyday wear.", img:"https://i.imgur.com/kX5WWVh.jpeg"},
+  {title: "Choosing the Right Sneakers for Fitness", url:"blog/choosing-sneakers.html", desc:"Tips for selecting sneakers for running, gym workouts, and active lifestyles.", img:"https://i.imgur.com/aqhNFVA.jpeg"},
+  {title: "Footwear Maintenance Tips for Long-Lasting Shoes", url:"blog/footwear-maintenance.html", desc:"Learn how to clean, polish, and store shoes to maximize lifespan.", img:"https://i.imgur.com/oqSOkvG.jpeg"},
+  {title: "Office Shoes: Style Meets Professionalism", url:"blog/office-shoes.html", desc:"Professional office shoes that combine comfort, durability, and style.", img:"https://i.imgur.com/or0HMh6.jpeg"},
+  {title: "Best Shoes for Outdoor Adventures", url:"blog/outdoor-adventures.html", desc:"Durable and comfortable shoes for hiking, walking, and outdoor activities.", img:"https://i.imgur.com/oqSOkvG.jpeg"},
+  {title: "Why Quality Shoes Are a Smart Investment", url:"blog/quality-shoes-investment.html", desc:"Invest in long-lasting, comfortable, and supportive footwear.", img:"https://i.imgur.com/kX5WWVh.jpeg"},
+  {title: "How to Care for Your Shoes", url:"blog/shoe-care.html", desc:"Expert tips to maintain shape, comfort, and appearance of your shoes.", img:"https://i.imgur.com/aqhNFVA.jpeg"},
+  {title: "How to Choose the Perfect Shoe for Every Occasion", url:"blog/perfect-shoe-occasion.html", desc:"Footwear guidance for formal, casual, travel, and outdoor activities.", img:"https://i.imgur.com/oqSOkvG.jpeg"},
+  {title: "Shoe Trends to Watch This Year", url:"blog/shoe-trends-year.html", desc:"Stay fashionable with the latest trends in sneakers, sandals, and eco-friendly shoes.", img:"https://i.imgur.com/kX5WWVh.jpeg"},
+  {title: "Shoe Styles That Never Go Out of Fashion", url:"blog/shoe-styles-timeless.html", desc:"Classic loafers, sneakers, and sandals that remain stylish year after year.", img:"https://i.imgur.com/aqhNFVA.jpeg"}
+];
 
-  const postsPerPage = 5;
-  let currentPage = 1;
-  const totalPages = Math.ceil(posts.length / postsPerPage);
+const postsPerPage = 5;
+let currentPage = 1;
+const totalPages = Math.ceil(posts.length / postsPerPage);
 
-  const postsContainer = document.getElementById('blog-posts');
-  const prevBtn = document.getElementById('prev');
-  const nextBtn = document.getElementById('next');
+const postsContainer = document.getElementById('blog-posts');
+const prevBtn = document.getElementById('prev');
+const nextBtn = document.getElementById('next');
 
-  function renderPosts() {
-    postsContainer.innerHTML = '';
-    const start = (currentPage - 1) * postsPerPage;
-    const end = start + postsPerPage;
-    const pagePosts = posts.slice(start, end);
+function renderPosts() {
+  postsContainer.innerHTML = '';
+  const start = (currentPage - 1) * postsPerPage;
+  const end = start + postsPerPage;
+  const pagePosts = posts.slice(start, end);
 
-    pagePosts.forEach(post => {
-      const article = document.createElement('article');
-      article.classList.add('blog-post');
+  pagePosts.forEach(post => {
+    const article = document.createElement('article');
+    article.classList.add('blog-post');
 
-      // Generate today's date dynamically
-      const today = new Date();
-      const dateStr = today.toDateString();
+    const today = new Date();
+    const dateStr = today.toDateString();
+    const isoDate = today.toISOString();
 
-      // Encode URLs for sharing
-      const urlEnc = encodeURIComponent(post.url);
-      const imgEnc = encodeURIComponent(post.img);
+    const fullUrl = window.location.origin + "/" + post.url;
+    const urlEnc = encodeURIComponent(fullUrl);
+    const imgEnc = encodeURIComponent(post.img);
 
-      article.innerHTML = `
+    article.innerHTML = `
+      <img src="${post.img}" loading="lazy" alt="${post.title}">
+      <div class="content">
         <h3><a href="${post.url}">${post.title}</a></h3>
         <p class="post-date">Published on ${dateStr}</p>
         <p>${post.desc}</p>
@@ -118,31 +101,20 @@
           <a href="https://t.me/share/url?url=${urlEnc}" target="_blank">Telegram</a> |
           <a href="https://pinterest.com/pin/create/button/?url=${urlEnc}&media=${imgEnc}" target="_blank">Pinterest</a>
         </div>
-      `;
-      postsContainer.appendChild(article);
-    });
+      </div>
+    `;
 
-    prevBtn.disabled = currentPage === 1;
-    nextBtn.disabled = currentPage === totalPages;
-  }
-
-  prevBtn.addEventListener('click', () => {
-    if (currentPage > 1) {
-      currentPage--;
-      renderPosts();
-    }
+    postsContainer.appendChild(article);
   });
 
-  nextBtn.addEventListener('click', () => {
-    if (currentPage < totalPages) {
-      currentPage++;
-      renderPosts();
-    }
-  });
+  prevBtn.disabled = currentPage === 1;
+  nextBtn.disabled = currentPage === totalPages;
+}
 
-  // Initial render
-  renderPosts();
+prevBtn.addEventListener('click', () => { if(currentPage>1){currentPage--; renderPosts();} });
+nextBtn.addEventListener('click', () => { if(currentPage<totalPages){currentPage++; renderPosts();} });
+
+renderPosts();
 </script>
-
 </body>
 </html>
