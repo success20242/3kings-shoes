@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Shoe Styles That Never Go Out of Fashion | 3KINGS SHOES</title>
+<meta name="description" content="Explore timeless shoe styles like classic loafers, clean sneakers, and leather sandals that remain fashionable year after year.">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Shoe Styles That Never Go Out of Fashion">
+<meta property="og:description" content="Discover classic loafers, sneakers, and sandals that always stay in style. Timeless designs by 3KINGS SHOES.">
+<meta property="og:image" content="https://i.imgur.com/7vL5r6F.jpeg">
+<meta property="og:url" content="https://success20242.github.io/3kings-shoes/blog/shoe-styles-timeless.html">
+<meta property="og:type" content="article">
+
+<!-- Pinterest -->
+<meta name="pinterest-rich-pin" content="true">
+
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header>
+  <img src="https://i.imgur.com/or0HMh6.jpeg" alt="3KINGS SHOES Logo">
+  <h1>3KINGS SHOES Blog</h1>
+  <nav>
+    <a href="../index.html">Home</a> |
+    <a href="../blog.html">Blog</a> |
+    <a href="../about.html">About Us</a>
+  </nav>
+</header>
+
+<article class="blog-post">
+
+  <h2>Top Shoe Styles That Never Go Out of Fashion</h2>
+
+  <!-- AUTO DATE -->
+  <p class="post-date" data-date></p>
+
+  <img
+    src="https://i.imgur.com/7vL5r6F.jpeg"
+    alt="Timeless shoe styles"
+    class="blog-featured-img"
+  >
+
+  <p>
+    Some shoe styles are timeless. Classic loafers, clean sneakers, and leather sandals
+    remain relevant regardless of seasonal trends.
+  </p>
+
+  <p>
+    Neutral colors like black, brown, and white offer unmatched versatility,
+    making these shoes wardrobe essentials.
+  </p>
+
+  <p>
+    At <strong>3KINGS SHOES</strong>, we focus on designs that balance elegance,
+    durability, and comfort—ensuring your footwear stays stylish year after year.
+  </p>
+
+</article>
+
+<!-- SHARE BUTTONS -->
+<div id="share-container"></div>
+
+<footer>
+  📩 Email: chico7329@yahoo.com <br>
+  🌍 Retail • Wholesale • Worldwide Shipping <br><br>
+  <a href="../privacy.html">Privacy Policy</a> |
+  <a href="../terms.html">Terms & Conditions</a> |
+  <a href="../contact.html">Contact</a>
+  <br><br>
+  © 2025 3KINGS SHOES. All Rights Reserved.
+</footer>
+
+<!-- AUTO DATE + SHARE SCRIPT -->
+<script>
+  const dateEl = document.querySelector('[data-date]');
+  const today = new Date();
+  dateEl.textContent = "Published on " + today.toDateString();
+
+  const url = encodeURIComponent(window.location.href);
+  const image = encodeURIComponent(document.querySelector('.blog-featured-img').src);
+
+  document.getElementById("share-container").innerHTML = `
+    <div class="share-buttons">
+      <strong>Share this post:</strong><br>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=${url}" target="_blank">Facebook</a> |
+      <a href="https://wa.me/?text=Check%20this%20out:%20${url}" target="_blank">WhatsApp</a> |
+      <a href="https://t.me/share/url?url=${url}" target="_blank">Telegram</a> |
+      <a href="https://pinterest.com/pin/create/button/?url=${url}&media=${image}" target="_blank">Pinterest</a>
+    </div>
+  `;
+</script>
+
+</body>
+</html>
